@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	{literal}
+	$( function() {
+		$( "input[name='email']" ).autocomplete({
+			source: "index.php?page=ajax",
+			dataType: 'json',
+			minLength: 2,
+			select: function( event, ui ) {
+				alert( "Selected: " + ui.item.value + " aka " + ui.item.id );
+			}
+		});
+	} );
+	{/literal}
+</script>
+
+<form method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Имейл</label>
+    <input value="{$USER.username}" type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label>Нов имейл</label>
+    <input type="text" name="email" class="form-control">
+  </div>
+  <button type="submit" name="update" class="btn btn-primary">Актуализиране</button>
+</form>

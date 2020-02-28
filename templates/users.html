@@ -1,0 +1,19 @@
+<table class="table">
+	<thead>
+		<tr>
+			<th>№</th>
+			<th>Потребителско име</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		{foreach from=$USERS item=USER}
+		<tr>
+			<td>{$USER.id}</td>
+			<td>{$USER.username}</td>
+			<td>
+			</td>
+		</tr>
+		{/foreach}
+	</tbody>
+</table>
